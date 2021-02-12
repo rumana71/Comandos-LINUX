@@ -1,0 +1,326 @@
+BITACORAS DE COMANDOS LUNUX 20.04
+
+1.	Comando: pwd
+a.	Uso: Usa el comando pwd para encontrar la ruta del directorio (carpeta) de trabajo actual en el que te encuentras. El comando devolverá una ruta absoluta (completa), que es básicamente una ruta de todos los directorios que comienzan con una barra diagonal (/) 
+b.	Ejemplo: Un ejemplo de una ruta absoluta es /home/nombredeusuario.
+Parámetros:
+-L, –logical usa el PWD desde el ambiente, incluso si este contiene enlaces simbólicos
+-P, –physical excluye todos los enlaces simbólicos
+–help muestra la ayuda del comando
+–version muestra la información de la versión de este comando
+
+2.	Comando: cd
+a.	Uso: Para navegar por los archivos y directorios de Linux, usa el comando cd. Te pedirá la ruta completa o el nombre del directorio, dependiendo del directorio de trabajo actual en el que te encuentres.
+
+Ejemplo: 
+Supongamos que estás en /home/nombredeusuario/Documentos y deseas ir a Fotos, un subdirectorio de Documentos. Para hacerlo, simplemente escribe el siguiente comando: cd Fotos.
+
+Otro escenario es si deseas ir a un directorio completamente nuevo, por ejemplo, /home/nombredeusuario/Peliculas. En este caso, debes escribir cd seguido de la ruta absoluta del directorio: cd /home/ nombredeusuario/Peliculas.
+
+Hay algunos atajos para ayudarte a navegar rápidamente:
+-	cd .. (con dos puntos) para ir un directorio hacia arriba
+-	cd para ir directamente a la carpeta de inicio
+-	cd- (con un guión) para ir al directorio anterior
+Parámetros
+-L: Este parámetro fuerza enlaces simbólicos que debe seguir cd, es decir, cuando nos movemos a otro directorio se crea un enlace simbólico a ese directorio, que es el valor por defecto del comando cd.
+ 
+-P: Esta opción hace uso de la estructura de directorios físicos sin que sea necesario seguir los enlaces simbólicos.
+ 
+-e: En caso de usar el parámetro -P y no sea posible determinar el directorio de trabajo actual, esta opción indicará al comando cd que genere un error. Si no usamos el parámetro -P con esta opción, -e no tendrá ningún efecto en el resultado generado.
+
+3.	Comando: ls
+Uso: El comando ls se usa para ver el contenido de un directorio. Por defecto, este comando mostrará el contenido de tu directorio de trabajo actual.
+
+Ejemplo:
+Si deseas ver el contenido de otros directorios, escribe ls y luego la ruta del directorio. Por ejemplo, ingresa ls/home/nombredeusuario/Documentos para ver el contenido de Documentos.
+
+Parámetros:
+Hay variaciones que puedes usar con el comando ls:
+•	ls -R también listará todos los archivos en los subdirectorios
+•	ls -a mostrará los archivos ocultos
+•	ls -al listará los archivos y directorios con información detallada como los permisos, el tamaño, el propietario, etc.
+4.	Comando:  cat
+Uso: cat (abreviatura de concatenate, en inglés) es uno de los comandos más utilizados en Linux. Se utiliza para listar el contenido de un archivo en la salida estándar (sdout). Para ejecutar este comando, escribe cat seguido del nombre del archivo y su extensión. Por ejemplo: cat archivo.txt.
+Ejemplo:
+Aquí hay otras formas de usar el comando cat:
+•	cat > nombredearchivo crea un nuevo archivo.
+•	cat nombredearchivo1 nombredearchivo2>nombredearchivo3 une dos archivos (1 y 2) y almacena la salida de ellos en un nuevo archivo (3)
+•	convertir un archivo a mayúsculas o minúsculas, cat nombredearchivo | tr a-z A-Z> salida.txt
+Parámetros
+-A Mostrar todo.
+-b Omitir los números de línea para los espacios en blanco en el salida.
+-e Un caracter $ se mostrará al final de cada línea anterior a una nueva línea.
+-E Muestra un $ (símbolo del dolar) al final de cada línea.
+-n Numera todas las líneas en el salida.
+-s Si la salida tiene múltiples líneas vacías las sustituye con una única línea vacía.
+-T Muestra los caracteres de tabulación en el salida.
+-v Los caracteres no mostrados (con la excepción de tabuladores, nuevas líneas y saltos de página) se muestran.
+
+5.	Comando: cp
+Uso: Sirve para copiar archivos del directorio actual a un directorio diferente. 
+Ejemplo:
+Por ejemplo, el comando cp escenario.jpg /home/nombredeusuario/Imagenes crearía una copia de escenario.jpg (desde tu directorio actual) en el directorio de Imagenes.
+Parámetros
+-a	archive files
+-f	copia forzada al remover el archivo destino si es necesario
+-i	interactivo, pide confirmación del usuario antes de sobre escribir
+-l	enlaces en vez de copia
+-L	seguir enlaces simbólicos
+-n	no sobre escribir archivos
+-R	copia recursiva recursive copy (including hidden files)
+-u	actualizar, copia cuando la fuente es mas reciente que el destino
+-v	muestra mensajes informativos
+
+6.	Comando: mv
+Uso: El uso principal del comando mv es mover archivos, aunque también se puede usar para cambiar el nombre de los archivos.
+Parámetros
+	-i si existe un fichero igual que el destino, nos pregunta si queremos sobrescribirlo.
+	-f aunque el fichero de destino exista, lo sobrescribe sin preguntar. 
+
+	Ejemplo:
+Los argumentos en mv son similares al comando cp. Debes escribir mv, el nombre del archivo y el directorio destino. Por ejemplo: mv archivo.txt /home/nombredeusuario/Documentos.
+Para cambiar el nombre de los archivos, el comando de Linux es mv nombreviejo.ext nombrenuevo.ext
+7.	Comando: mkdir
+Uso: Usa el comando mkdir para crear un nuevo directorio: si escribes mkdir Musica, creará un directorio llamado Musica.
+Ejemplo:
+También hay comandos adicionales de mkdir:
+•	Para generar un nuevo directorio dentro de otro directorio, usa este comando básico de Linux mkdir Musica/Nuevoarchivo
+•	Usa la opción p (padres) para crear un directorio entre dos directorios existentes. Por ejemplo, mkdir -p Musica/2020/Nuevoarchivo creará el nuevo archivo «2020».
+Parámetro
+•	-m, --mode=modo. Establece los permisos de los directorios creados a modo.
+•	-p, --parents. Crea los directorios padre que falten para cada argumento directorio. No hace caso de argumentos que correspondan a directorios existentes, por ejemplo si existe un directorio /a, entonces mkdir /a es un error, pero mkdir -p /a no lo es.
+•	--verbose. Muestra un mensaje para cada directorio creado.
+•	--help. Muestra la ayuda y finaliza.
+•	--version. Muestra información sobre la versión.
+8.	Comando: rmdir
+Uso: Si necesitas eliminar un directorio, usa el comando rmdir. Sin embargo, rmdir solo te permite eliminar directorios vacíos.
+Parámetro
+•	-p Permite a los usuarios eliminar el directorio dirname y sus directorios padres que se queden vacíos.
+      9. Comando: rm
+Uso: El comando rm se usa para eliminar directorios y el contenido dentro de ellos. Si solo deseas eliminar el directorio, como alternativa a rmdir, usa rm -r.
+Parámetros
+•	-i Pide confirmación para cada borrado.
+•	-f Forzado, ignora archivos no existentes y elimina cualquier aviso de confirmación.
+•	-v Muestra el nombre de cada fichero antes de borrarlo
+•	-d Borra los directorios vacíos
+
+10. Comando: touch
+Uso: El comando touch te permite crear un nuevo archivo en blanco a través de la línea de comando de Linux. 
+Ejemplo: touch /home/nombredeusuario/Documentos/Web.html para crear un archivo HTML titulado Web en el directorio Documentos.
+Parámetros
+•	-a Cambia la fecha de acceso del archivo.
+•	-m Cambia la fecha de modificación del archivo.
+•	-c No crea un archivo nuevo (en caso de que no exista).
+•	-r fichref Toma como referencia la fecha correspondiente al fichero fichref.
+•	-t decimtime Permite especificar la fecha como un número decimal.
+•	-d date Usa la fecha date en lugar de la actual.
+
+11. Comando: locate
+Uso: Puedes usar este comando para localizar un archivo, al igual que el comando de búsqueda en Windows. Además, el uso del argumento -i junto con este comando hará que no distinga entre mayúsculas y minúsculas, por lo que puedes buscar un archivo incluso si no recuerdas su nombre exacto.
+Para buscar un archivo que contenga dos o más palabras, usa un asterisco (*). 
+Ejemplo:
+El comando locate -i escuela*nota buscará cualquier archivo que contenga la palabra «escuela» y «nota», ya sea en mayúsculas o minúsculas.
+Parámetros
+•	f: archivo normal
+•	d: directorio
+•	l: enlace simbólico
+•	c: dispositivos de caracteres
+•	b: dispositivos de bloque
+
+12. Comando find
+Uso: Similar al comando locate, usando find también buscas archivos y directorios. La diferencia es que usas el comando find para ubicar archivos dentro de un directorio dado.
+	Ejemplo:
+El comando find /home/ -name notas.txt buscará un archivo llamado notas.txt dentro del directorio de inicio y sus subdirectorios.
+Otras variaciones al usar find son:
+•	Para buscar archivos en el directorio actual, find . -name notas.txt
+•	Para buscar directorios, / -type d -name notes.txt
+Parámetros
+-H: No sigue los enlaces simbólicos, solo excepto si se procesan los argumentos de la línea de comandos.
+ 
+-L: Sigue los enlaces simbólicos.
+ 
+-P: Nunca sigue los enlaces simbólicos y es la opción por defecto
+
+13. Comando: grep
+Uso: Otro comando básico de Linux que sin duda es útil para el uso diario es grep. Te permite buscar a través de todo el texto en un archivo dado.
+Para ilustrar, grep azul notepad.txt buscará la palabra azul en el archivo del bloc de notas. Las líneas que contienen la palabra buscada se mostrarán.
+Parámetros
+–i: no diferenciará entre mayúsculas y minúsculas.
+–w: fuerza que sólo encuentre palabras concretas.
+–v: selecciona las líneas que no coinciden.
+–n: muestra el número de la línea con las palabras de solicitadas.
+–h: elimina el prefijo del nombre del archivo Unix en la salida.
+–r: busca directorios recursivamente.
+–R: como -r pero sigue todos los enlaces simbólicos.
+–l: muestra sólo nombres de archivos con las líneas seleccionadas.
+–c: muestra sólo una cuenta por archivo de las líneas seleccionadas.
+–color: muestra los patrones coincidentes en colores.
+14. Comando: sudo
+Uso: Abreviatura de «SuperUser Do» (SuperUsuario hace), este comando te permite realizar tareas que requieren permisos administrativos o raíz. Sin embargo, no es aconsejable usar este comando para el uso diario, ya que podría ser fácil que ocurra un error si haces algo mal.
+Parámetros
+•	número de versión de pantalla -V
+•	-h muestra el número de versión y las instrucciones para obtener instrucciones de uso
+•	-l muestra en su propio derecho (para llevar a cabo los usuarios sudo)
+•	Porque sudo -v en la primera ejecución o no ejecutados dentro de N minutos (por defecto N es cinco) le pedirá la contraseña, este parámetro se confirmó una vez más que, si hay más de N minutos, le pedirá la contraseña
+•	-k le pedirá la contraseña (o sin más de N minutos) La próxima vez que se ejecute la fuerza usuarios sudo
+•	-b instrucción que se ejecuta en segundo plano
+•	pronta -p puede pedir que se cambie la solicitud de contraseña, donde% u se sustituye por nombre de la cuenta de un usuario,% h mostrará el nombre de host
+•	-u nombre de usuario / # uid sin este parámetro, el representante para ejecutar comandos como root, y añadir este parámetro, puede ejecutar comandos con la identidad (nombre de usuario uids para el nombre de usuario del número de usuario)
+•	-s variables de entorno de ejecución especificados en la cáscara de la cáscara, o / etc / passwd en la capa especificada
+•	-H En el hogar (directorio principal) variable de entorno se especifica como para cambiar la identidad del directorio personal del usuario (si no añadir -u parámetro es la raíz administrador del sistema)
+•	Para comandar la identidad del administrador del sistema (o -u cambiar para otros) instrucciones a ser ejecutadas
+15. Comando: df
+Uso: Usa el comando df para obtener un informe sobre el uso del espacio en disco del sistema, que se muestra en porcentaje y KB. Si deseas ver el informe en megabytes, escribe df -m.
+Parámetros
+•	-k Utiliza unidades de 1024 bytes en vez de las determinadas de 512 bytes para mostrar el uso de disco
+•	-P Produce una salida en el formato descrito en la sección de la salida estándar (STDOUT)
+•	-t Incluye todas las cifras del espacio asignado
+•	-i Muestra los i-nodos usados y disponibles
+•	-h Muestra espacio en unidades comunes(KB, MB o GB)
+•	-T Imprimir el tipo de sistema de archivos
+
+16. Comando: du
+Uso: Si deseas verificar cuánto espacio ocupa un archivo o un directorio, el comando du (Uso del disco, en inglés) es la respuesta. Sin embargo, el resumen de uso del disco mostrará números de bloque de disco en lugar del formato de tamaño habitual. Si deseas verlo en bytes, kilobytes y megabytes, agrega el argumento -h a la línea de comando.
+Parámetro
+•	-a muestra resultados para todos los ficheros, no sólo para los directorios3
+•	-c produce un "total"
+•	-h muestra los tamaños de forma legible
+•	-s muestra solamente un total para cada argumento
+•	-x se salta los directorios de otros sistemas de ficheros
+
+17. Comando: head
+El comando head se usa para ver las primeras líneas de cualquier archivo de texto. De manera predeterminada, mostrará las primeras diez líneas, pero puedes cambiar este número a tu gusto. 
+Por ejemplo, si solo deseas mostrar las primeras cinco líneas, escribe head -n 5 nombredearchivo.ext.
+Parámetro
+•	-n número: imprime el número indicado de líneas.
+•	-c número: imprime el número indicado de bytes.
+
+18. Comando: tail
+Este tiene una función similar al comando head, pero en lugar de mostrar las primeras líneas, el comando tail mostrará las últimas diez líneas de un archivo de texto. 
+Por ejemplo, tail -n nombredearchivo.ext.
+Parámetro
+•	-n número: imprime el número indicado de líneas.
+•	-c número: imprime el número indicado de bytes.
+19. Comando: diff
+Para abreviar diferencia, el comando diff compara el contenido de dos archivos línea por línea. Después de analizar los archivos, genera las líneas que no coinciden. Los programadores a menudo usan este comando cuando necesitan hacer modificaciones al programa en lugar de reescribir todo el código fuente.
+La forma más simple de usar este comando es diff archivo1.ext archivo2.ext
+Parámetro
+•	-B --ignore-Blanco-líneas o no comprueba las líneas en blanco.
+•	-c Mostrar todo el texto, y las diferencias marcadas.
+•	-C <Número de línea> o <--context filas> y ejecutar "-C- <>" filas de la misma instrucción.
+•	-d o --minimal utilizar diferentes algoritmos a unidades más pequeñas para la comparación.
+•	-D <Nombre de macro> o ifdef <nombre de macro> formato de salida de este parámetro se puede utilizar para macros del preprocesador.
+•	-e o --ed este parámetro se puede utilizar para dar formato a la salida ed el archivo de secuencia de comandos.
+•	Formato -f o salida ed-ed -Forward similar al archivo de secuencia de comandos, pero el orden del documento original para mostrar un lugar diferente.
+•	Cuando -H o archivos grandes archivos grandes --speed, se puede acelerar.
+•	-l <cadena de caracteres o> o de igualación líneas --ignore <carácter o cadena> Si dos archivos difieren en unas pocas líneas, pero estas líneas al mismo tiempo contiene las opciones de carácter o cadena especificada , no se muestran las diferencias entre los dos archivos.
+•	-i o --ignore caso no comprueba mayúsculas diferentes.
+•	Resultados -l o --paginate por la ficha programa pr.
+•	--rcs -n o compararán los resultados en formato de pantalla RCS.
+•	-N-O --new fichero Cuando compara directorios, si el archivo Un sólo aparece en un directorio, se mostrará el valor por defecto:
+•	Sólo en el directorio: Archivo A Si se utiliza el parámetro -N, lo hará el archivo diff Una comparación con un documento en blanco.
+•	-p Si los archivos comparados como archivo de código de programa en lenguaje C, muestran diferencias en el nombre de la función se encuentra.
+•	-P O-new-archivo --unidirectional -N similar, pero sólo si el segundo directorio contiene un directorio no tiene el primer archivo, el archivo se compara con el documento en blanco.
+•	-qo --brief demuestran solamente si las diferencias no muestran información detallada.
+•	-r o --recursive comparar los archivos en los subdirectorios.
+•	-s o --report idénticos archivos si no encontró diferencias, aún así mostrar la información.
+•	-S <Archivo> o --starting-archivo <archivo> Cuando compara directorios, empezar a comparar desde el archivo especificado.
+•	-t-pestañas o --expand en la salida, expanda el carácter de tabulación.
+•	-T-O --initial pestaña en la parte frontal de cada línea de caracteres de tabulación para alinear.
+•	-u, -U <número de columnas> o --unified = <número de columnas> para fusionar las diferentes manera de mostrar el contenido del archivo.
+•	-v o --version Muestra información de versión.
+•	-wo --ignore-all-espacio Ignorar todos los caracteres de espacio en blanco.
+•	-W <Ancho> o --width <anchura> Cuando se utiliza el parámetro -y especifica el ancho de la columna.
+•	-x <nombre de archivo o directorio> o --exclude <nombre de archivo o directorio> no se puede comparar las opciones de archivo o directorio especificado.
+•	-X <Archivo> o --exclude -desde <archivo> Puede guardar el archivo o tipo de directorio en un archivo de texto y, a continuación, especifique el archivo de texto en = <file>.
+•	-y o --side a lado en forma paralela para mostrar las similitudes y diferencias del archivo en.
+•	--help Muestra la ayuda.
+•	--left-columna cuando se utiliza el parámetro -y, si las mismas dos líneas de un archivo, sólo el contenido de la línea en el campo de la izquierda.
+•	--suppress-common-lines cuando se utilizan las indicaciones de parámetros -y únicas diferencias.
+20. Comando: tar
+El comando tar es el comando más utilizado para guardar múltiples archivos en un tarball, un formato de archivo de Linux común que es similar al formato zip, con compresión opcional.
+Este comando es bastante complejo con una larga lista de funciones, como agregar nuevos archivos a un archivo existente, enumerar el contenido de un archivo, extraer el contenido de un archivo y muchos más.
+Parámetros
+-c	Crear un nuevo archivo .tar
+-v	Muestra una descripción detallada del progreso de la compresión
+-f	Nombre del archivo
+-z	Compresión gzip
+-j	Compresión bzip2
+-C	Extraer archivos en un directorio diferente
+-x	Extraer el archivo
+-r	Actualizar o agregar un archivo o directorio en un archivo .tar existente
+
+21. Comando: chmod
+chmod es otro comando de Linux, utilizado para cambiar los permisos de lectura, escritura y ejecución de archivos y directorios. Como este comando es bastante complicado, puedes leer el tutorial completo (en inglés) para ejecutarlo correctamente.
+Parámetros
+•	-R para que mire también en los subdirectorios de la ruta.
+•	- v para que muestre cada fichero procesado
+•	- c es como -v, pero sólo avisa de los ficheros que modifica sus permisos
+22. Comando: chown
+En Linux, todos los archivos son propiedad de un usuario específico. El comando chown te permite cambiar o transferir la propiedad de un archivo al nombre de usuario especificado. 
+Por ejemplo, chown usuariolinux2 archivo.ext hará que usuariolinux2 sea el propietario del archivo.ext.
+Parámetros:
+-R: La R mayúsculas significa cambiar el dueño de todos los subdirectorios si existen, debes utilizar este parámetro si utilizas el comando contra un directorio.
+24. Comando: kill
+Si tienes un programa que no responde, puedes cerrarlo manualmente utilizando el comando kill. Enviará una cierta señal al programa que se está ejecutando mal y le indica a la aplicación que finalice.
+Hay un total de sesenta y cuatro señales que puedes usar, pero las personas generalmente solo usan dos señales:
+•	SIGTERM (15): solicita que un programa deje de ejecutarse y te da algo de tiempo para guardar todo tu progreso. Si no especificas la señal al ingresar el comando kill, se utilizará esta señal.
+•	SIGKILL (9): obliga a los programas a detenerse inmediatamente. El progreso no guardado se perderá.
+Además de conocer las señales, también debes conocer el número de identificación del proceso (PID) del programa que deseas detener (kill). Si no conoces el PID, simplemente ejecute el comando ps ux.
+Después de saber qué señal deseas usar y el PID del programa, ingresa la siguiente sintaxis:
+kill [opción de señal] PID.
+Parámetros
+kill -l Muestra una lista de todas las señales.
+Kill 0  Detiene todos los procesos excepto su shell de inicio de sesión.
+kill -1 Colgar, se genera cuando nos desconectamos del terminal.
+kill -2 Interrupción, se genera cuando se pulsa Ctrl+C
+kill -3 Salir.
+kill -9 Muerte segura, los hijos puede que queden huérfanos.
+kill %1 mata el trabajo número 1 (ver jobs).
+kill -9 $$ sale del shell actual sin guardar el historial de comandos.
+kill -HUP PID Reinicia el proceso, es más confiable reiniciarlo ejecutando /etc/init.d/proceso restart
+
+25. Comando: ping
+Usa el comando ping para verificar tu estado de conectividad a un servidor. Por ejemplo, simplemente ingresando ping google.com, el comando verificará si puedes conectarte a Google y también medirá el tiempo de respuesta.
+Parámetros
+•	/t:Hace el ping al host hasta que se detiene.16
+•	/a:: Resuelve la dirección como nombre de host.17
+•	/l: Especifica el tamaño del paquete ICMP en bytes, con un máximo de 65527 bytes.18
+•	/f: Especifica que los paquetes ICMP no deben fragmentarse.19
+•	/i: Especifica el TTL (tiempo de vida) de los paquetes enviados ICMP, con un valor estándar en equipos con Windows XP (host), esto es típicamente de 128 y un máximo de 255.20
+
+27. Comando: uname
+El comando uname, abreviatura de Nombre de Unix, imprimirá información detallada sobre tu sistema Linux, como el nombre de la máquina, el sistema operativo, el núcleo, etc.
+Parámetros
+-a,  –all: Muestra toda la información.
+-s, –kernel-name, –sysname: Muestra el nombre del núcleo, del sistema operativo.
+-n, –nodename: Muestra el nombre de nuestro equipo (hostname).
+-r, –kernel-release, release: Muestra la versión del núcleo del sistema.
+-v, –kernel-version: La fecha de compilación del Kernel del sistema.
+-m, –machine: Muestra el tipo de máquina (hardware), la arquitectura del procesador.
+-p, –processor: Muestra el tipo de procesador o unknown.
+-i, –hardware-platform: Muestra la plataforma de hardware o unknown.
+-o, –operating-system: Muestra el nombre del sistema operativo.
+–help: Muestra la ayuda y finaliza.
+–version: Muestra la versión y finaliza.
+
+29. Comando: history
+Cuando hayas estado utilizando Linux durante un cierto período de tiempo, notarás rápidamente que puedes ejecutar cientos de comandos todos los días. Como tal, ejecutar el comando history es particularmente útil si deseas revisar los comandos que ingresaste anteriormente.
+Parámetros
+	history -n, muestra el número de líneas.
+	history -a, añade los comandos de la sesión actual al archivo de historial.
+	history -c, borra todo el historial.
+	history – d 500, borra el comando número quinientos del historial.
+
+31. Comando: echo
+Este comando se usa para mover algunos datos a un archivo. Por ejemplo, si deseas agregar el texto «Hola, mi nombre es John» en un archivo llamado nombre.txt, debes escribir echo Hola, mi nombre es John >> nombre.txt
+Parámetro
+	\a : Alerta (BEL).
+	\b : Retroceso.
+	\c : Suprimir cualquier salida adicional,
+	\e : Equivale a pulsar la tecla escape.
+	\f : Muestra los caracteres de un formulario.
+	\n : Nueva línea.
+	\r : Retorno de carro (CR).
+	\t : Impresión en pestaña horizontal.
+	\v : Impresión en pestaña vertical.
