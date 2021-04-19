@@ -360,3 +360,193 @@ BITACORAS DE COMANDOS LUNUX 20.04
 	\r : Retorno de carro (CR).
 	\t : Impresión en pestaña horizontal.
 	\v : Impresión en pestaña vertical.
+	
+32. Comando: bash –version
+	Para ver la versión que tengo instalada de bash en mí computador
+	
+33. Comando: hostname
+	Muestra o establece el nombre del sistema. También sirve para obtener información relativa sobre el mismo
+ 
+	Parámetros
+	hostname -f Muestra el nombre de ni nodo completo, con dominio DNS.
+	hostname -i Muestra la dirección IP de mi nodo.
+	hostname -a Muestra los alias para mi nodo.
+	hostname --fqdn muestra el FQDN (Nombre de Dominio Completamente Especificado)
+
+34. Comando: apt
+	Con apt podemos realizar las operaciones mas comunes sobre paquetes y/o programas desde la linea de comandos en Linux.
+	
+	Parámetros:
+	list - lista los paquetes según los nombres
+	search - busca en las descripciones de los paquetes
+	show - muestra detalles del paquete
+	install - instala paquetes
+	remove - elimina paquetes
+	autoremove - Elimina automáticamente todos los paquetes sin utilizar
+	update - actualiza la lista de paquetes disponibles
+	upgrade - actualiza el sistema instalando/actualizando paquetes
+	full-upgrade - actualiza el sistema eliminando/instalando/actualizando paquetes
+	edit-sources - edita el fichero de información de fuentes
+	
+35. Comando: echo  
+	Sirve para la impresión de un texto en pantalla. 
+
+	Parámetros:
+	-n = No imprime la nueva línea
+	-e = Interactúa con los valores tras la barra invertida
+	\b = Espacio
+	\\ = Barra invertida
+	\n = Nueva línea
+	\t = Tabulación horizontal
+	\v = Tabulación vertical
+
+36. Comando: cat
+	Se utiliza para crear, fusionar o imprimir archivos en la pantalla de salida estándar o en otro archivo.
+ 
+	Parámetros:
+	-b: Número de líneas de salida no vacías
+	-e: Equivalente a -Ve
+	-E: Muestra “$” al final de cada línea
+	-n: Numera todas las líneas de salida
+	-s: Suprime líneas de salida vacías repetidas
+	-t: Equivalente a -vT
+	-help: Muestra las opciones de ayuda del comando
+	-version: Sirve para verificar la información de la versión de la herramienta
+	
+37. Comando: zsh
+	Es un intérprete de comandos para sistemas operativos Unix que nos permite personalizar nuestra terminal. 
+
+38. Comando: nano
+	Editor de archivos
+
+39. Comando: free
+	Muestra la cantidad de memoria de tú computadora en uso y la cantidad que aún está disponible.
+
+	Parámetros:
+	-h: Utiliza unidades sensatas y de mejor ajuste
+	-total: Muestra una línea con totales en la parte inferior de la salida
+	-type=tmpfs: Sólo informa sobre los sistemas de archivos tmpfs
+	-c: Le dice a free que se ejecute un cierto número de veces, con una pausa de un segundo entre cada una.
+	-s(segundos): Determina la duración de la pausa entre cada ejecución
+
+40. Comando: swapon
+	Se utiliza para especificar los dispositivos en los que se realizarán la paginación y el intercambio.
+
+	Parámetros:
+	-h: Proporciona ayuda
+	-v: Versión de visualización
+	-s: Mostrar el resumen de uso de swap por dispositivo
+	-a: Todos los dispositivos marcados como “swap”
+	-e: Cuando -a se utiliza con swapon, -e hace swapon omita silenciosamente dispositivos que no existen
+
+41. Comando: stat
+	Muestra por pantalla los atributos de un archvo
+ 
+	Parámetros:
+	%a: Va a mostrar los derechos de acceso en formato octal.
+	%A: Muestra los derechos de acceso en un formato legible por humanos.
+	%b: Imprime el número de bloques asignados.
+	%B: El tamaño en bytes de cada bloque informado por %b.
+	%d: Muestra el número de dispositivo en formato decimal.
+	%D: El número de dispositivo en formato hexadecimal.
+	%g: Imprime el ID de grupo del propietario.
+	%G: Muestra el nombre del grupo del propietario.
+	%n: Muestra el nombre del archivo.
+	%N: Escribe el nombre del archivo entre comillas sin referencia si es un enlace simbólico.
+	%u: Muestra el ID de usuario del propietario.
+	%U: Imprime el nombre de usuario del propietario.
+	%w: Revela la hora de nacimiento del archivo, legible por humanos. Escribe – si se desconoce.
+	%W: Imprime la hora de nacimiento del archivo, en segundos desde Epoch. Escribe 0 si se desconoce.
+	%x: Va a imprimir la hora del último acceso, legible por humanos.
+	%X: La hora del último acceso, en segundos desde Epoch
+	%y: Muestra la hora de la última modificación, legible por humanos.
+	%Y: Imprime el tiempo desde la última modificación, en segundos desde Epoch.
+	%z: Este es el momento del último cambio, legible por humanos.
+	%Z: La hora desde el último cambio, en segundos desde Epoch.
+	
+42. Comando: file
+	El comando file es una utilidad que realiza una serie de pruebas (test) para determinar el tipo y formato de un archivo.
+ 
+	Parámetros:
+	-d: Realiza las pruebas de sintaxis y de números mágicos del sistema. Esta es la opción default, sino se utiliza -m o -M
+	-h: Si el archivo a analizar es un enlace simbólico, lo identifica como tal.
+	-i: No brindar una clasificación adicional más allá de la del tipo básico.
+	-m archive: Realiza una prueba adicional de números mágicos con el archivo indicado
+	-M archive: Similar a -m, salvo que no realiza las pruebas de sintaxis y de números mágicos por defecto del sistema.
+	-b: No imprime el nombre del archivo en cada resultado.
+	-i: Muestra el tipo mime junto con la codificación utilizada.
+	-e prueba: Excluye de realizar la prueba indicada. Entre las opciones que podemos indicarle, se encuentran:
+
+
+43. Comando: chown 
+	Permite cambiar el propietario de un archive o diretorio en Sistema.
+
+	Parámetros:
+	-R: indica que los cambios se le deben de aplicar tanto a la carpeta especificada como a los archivos y subcarpetas.
+
+43. Comando: ps
+	Que permite visualizar el estado de un Proceso 
+
+	Parámetros:
+	-A: Muestra todos los procesos (de todos los usuarios en el sistema).
+	-a: Muestra todos los procesos de una [tty] determinada.
+	-d: Muestra todo excepto los líderes de la sesión.
+	-e: Muestra todos los procesos (equivalente a -A).
+	T: Muestra todos los procesos de la terminal actual.
+	a: Muestra todos los procesos de la terminal actual incluyendo los de otros usuarios.
+	g: Muestra todos los procesos incluyendo grupos líderes (obsoleta excepto en sunOs).
+	r: Muestra solamente los procesos corriendo.
+	x: Muestra los procesos en un estilo BSD (sin controlar la [TTY]).
+	f: Visualiza los parámetros con los que se levantó el proceso.
+
+44. Comando: su
+	Sirve para cambiar el usuario actual a otro usuario desde SSH.
+
+45. Comando: curl
+	Verificar la conectividad a las URL y como una gran herramienta para transferir datos.
+
+	Parámetros:
+	-L: Seguir cabeceras de la ubicación HTTP 
+	-o:  La opción -o nos permite decidir el nombre de archivo, mientras que la opción -O utiliza el nombre de archivo en la URL para guardar
+
+46. Comando: usermod
+	Se usa para modificar o cambiar cualquier atributo de una cuenta de usuario ya creada a través de la línea de comando. El comando "usermod" es similar al "useradd" o "adduser", pero el inicio de sesión se otorga a un usuario existente.
+ 
+	Parámetros:
+	-c = We can add comment field for the useraccount.
+	-d = To modify the directory for any existing user account.
+	-e = Using this option we can make the account expiry in specific period.
+	-g = Change the primary group for a User.
+	-G = To add a supplementary groups.
+	-a = To add anyone of the group to a secondary group.
+	-l = To change the login name from tecmint to tecmint_admin.
+	-L = To lock the user account. This will lock the password so we can’t use the account.
+	-m = moving the contents of the home directory from existing home dir to new dir.
+	-p = To Use un-encrypted password for the new password. (NOT Secured).
+	-s = Create a Specified shell for new accounts.
+	-u = Used to Assigned UID for the user account between 0 to 999.
+	-U = To unlock the user accounts. This will remove the password lock and allow us to use the user account.
+
+47. Comando: yum
+	Es un paquete administrador de software(software package manager). Es una muy útil herramienta para instalar, actualizar y remover paquetes junto con sus dependencias en distribuciones Linux basados en RPM (redhat, fedora, centos, etc.).
+ 
+	Parámetros:
+	yum install paquete: Instala la última versión del paquete indicado. Pide por confirmación.
+	yum -y install paquete: Instala la última versión del paquete indicado. Instala sin pedir confirmación.
+	yum -y update: Actualiza todos los paquetes en el sistema.
+	yum -y update --exclude=sendmail: Actualiza todos los paquetes del sistema, excepto sendmail.
+	yum -y update httpd: Actualiza solo el paquete indicado, en este caso el servidor Web Apache.
+	yum -y upgrade: Actualiza los paquetes indicados, pero tomando en cuenta paquetes obsoletos en el cálculo de la actualización.
+	yum check-update: Muestra una lista de paquetes que necesitan ser actualizados sin instalarlos.
+	yum info paquete: Descripción completa del paquete indicado.
+	yum info recent:  Muestra información resumida de los últimos paquetes instalados o actualizados
+	yum list: Lista de todos los paquetes disponibles para instalación, actualización o ya instalados
+	yum list installed: Lista de todos los paquetes instalados en el sistema.
+	yum list available: Lista de todos los paquetes disponibles para ser instalados.
+	yum list updates: Lista de todos los paquetes disponibles para ser actualizados.
+	yum search paquete: Busca el 'paquete' en la base de datos de paquetes instalados o para instalar. 'paquete' puede ser una palabra parcial del paquete a buscar.
+	yum clean all: Limpia tanto archivos de encabezados como paquetes, como utilizar las dos opciones previas, pero al mismo tiempo.
+
+
+
+
